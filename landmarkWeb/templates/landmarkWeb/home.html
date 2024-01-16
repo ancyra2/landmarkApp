@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Landmark Web Application{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+<h1>Landmark App</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+</form>
+
+<img src="{% static 'landmarkWeb/images/bus.jpg' %}" alt="" srcset="">  
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
