@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Landmark Web Application{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+<div class="background-shower">
+
+</div>
+<div class="content" role="article">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% if uploaded_image %}
+                <h2>Yüklenen Resim:</h2>
+                <img src="{{ uploaded_image }}" class="uploaded_image" alt="Uploaded Image">
+                <form class="img_uploaded" method="get" action="{% url 'detected' %}" >
+                    {% csrf_token %}
+                    <input type="text" readonly name="img_name" style="display: none;" value="{{uploaded_image}}">
+                    <button class="btn btn-light img-btn" type="submit">Yapıyı tespip et</button>  
+                </form>
+                {% else %}
+                <form action="" class="img-upload" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="img-pool">
+                        <label class="form-label" for="customFile">Keşfetmek istediğiniz yapının resmini
+                            yükleyin</label>
+                        <input type="file" name="image" class="form-control img-input" id="customFile" />
+                    </div>
+                    <button class="btn btn-light img-btn" type="submit">Resmi Yükle</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock %}

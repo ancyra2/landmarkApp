@@ -5,14 +5,28 @@
 
 {% block content %}
 {% include 'header.html' %}
-<h1>Landmark App</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-</form>
+<div class="hero">
+    <div class="container " role="article">
+        <div class="row motto">
+            <div class="col-sm-12 col-md-6 motto-inner">
+                <p class="motto-text">
+                    Gezerken keşfet, keşferderken kaydet.
+                    Yapay zeka ile şehirleri keşfet ve işaretle.
+                </p>
 
-<img src="{% static 'landmarkWeb/images/bus.jpg' %}" alt="" srcset="">  
-
+                <p class="motto-text-small">
+                    Bu bir BTK Akademi projesidir.
+                </p>
+                <a href="{% url 'detection' %}"><button class="btn btn-light">Haydi Keşfet<i
+                            class="fa-solid fa-arrow-right"></i></button></a>
+            </div>
+            <div class="col-md-4 motto-video">
+                <video autoplay loop>
+                    <source src="{% static 'landmarkWeb/images/mediavideo.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
 {% include 'footer.html' %}
 {% endblock %}
-
-
