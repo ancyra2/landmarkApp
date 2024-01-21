@@ -13,6 +13,9 @@
     height: 80px;
     
 }
+.logo{
+    padding-left: 10%;
+}
 @media screen and (max-width: 500px) {
     .landmark-navbar{
         align-items: center;
@@ -105,10 +108,9 @@
 /*footer*/
 .footer{
     height: calc(15vh);
-    min-height: calc(100px);
+    min-height: calc(145px);
     background-color: #5e45e7;
     position: relative;
-    min-width: 100vw;
     bottom: 0;
 }
 .footer-row{

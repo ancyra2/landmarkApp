@@ -42,7 +42,7 @@ def detected(request):
            
             result = yolov7Detect2(weights, source_path, img_size, conf_thres)
             result = result['output_lines'][15]
-
+            return HttpResponse(result)
             pattern_str = r"1 ([a-zA-Z-]+)"
             pattern = re.compile(pattern_str)
             match = pattern.search(result)
