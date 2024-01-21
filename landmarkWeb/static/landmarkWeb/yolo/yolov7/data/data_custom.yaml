@@ -1,0 +1,6 @@
+train: data/images/train/
+val: data/images/valid/
+test: data/images/test/
+
+nc: 9
+names: ['anitkabir', 'ankarakalesi', 'atakule', 'bestepe', 'btk', 'hacibayramveli', 'ilkmeclis', 'kocatepe', 'resimheykelmuze']
